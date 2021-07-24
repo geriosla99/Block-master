@@ -1,8 +1,10 @@
 import React from 'react'
 import { Form, Button, Container } from "react-bootstrap";
-import {useForm} from "../useForm";
+import {useForm} from "../hook/useForm";
 import {useDispatch} from 'react-redux'
-import {login} from '../action'
+import {login} from '../action/action'
+import {loginGoogle} from '../action/action'
+import { Link } from 'react-router-dom'
 
 const LogIn = () => {
 
@@ -18,6 +20,10 @@ const LogIn = () => {
     const handleLogin = (e) =>{
         e.preventDefault();
         dispatch(login(email,password));
+    }
+
+    const handleLoginGoogle = () =>{
+        dispatch(loginGoogle());
     }
 
     return (
@@ -48,17 +54,18 @@ const LogIn = () => {
                         <Button variant="primary" type="submit">
                             Iniciar sesión
                         </Button>
+                        <Container className="auth__social-networks">
+                            <Container 
+                                className="google-btn"
+                                onClick={handleLoginGoogle}
+                                >
+                                <Container className="google-icon-wrapper">
+                                    <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
+                                </Container>
+                            </Container>
+                        </Container>
+                        <Link to='/registro'>Registrarse</Link>
                     </Form>
-                    <Container className="auth__social-networks">
-          <Container
-            className="google-btn"
-          >
-            <Container className="google-icon-wrapper">
-              <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
-            </Container>
-          </Container>
-        </Container>
-
             </Container>    
         </div>
     )
