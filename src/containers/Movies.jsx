@@ -1,15 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { GlobalStyle } from './Movies/Movies';
+import MovieCard from "../components/MovieCard/MovieCard";
+import BannerMovies from "../components/Banner/BannerMovies";
+import Navbar from "../components/Navbar/Navbar";
 
 
 const Movies = () => {
     return (
-        <div>
-            hola desde Movies
-            <Link to='/login'>
-            Iniciar sesion
-            </Link>
-        </div>
+        <GlobalStyle>
+            <Navbar/>
+            <BannerMovies/>
+            <MovieCard/>
+        </GlobalStyle>
     )
 }
 
