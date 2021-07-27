@@ -55,3 +55,10 @@ export const loginEmailPassword = (email, password) => {
             })
     }
 }
+
+export const setMovies = (movies) => {
+    return {
+        type: types.setMovies,
+        payload: movies
+    }
+}
