@@ -6,7 +6,7 @@ import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { AuthRouter } from './AuthRouter';
 import { login } from '../action/action';
-import Movies from "../containers/Movies";
+import Home from "../containers/Home";
 
 export const AppRouter = () => {
     const dispatch = useDispatch();
@@ -47,7 +47,7 @@ export const AppRouter = () => {
                     <PrivateRoute
                         exact
                         path="/"
-                        component={Movies}
+                        component={Home}
                         isAuthenticated={isLooggedIn}
                     />
 
