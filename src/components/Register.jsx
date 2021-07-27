@@ -3,6 +3,7 @@ import { Form, Button, Container } from 'react-bootstrap'
 import { registroEmailPasswordName } from '../action/action'
 import { useDispatch } from 'react-redux'
 import { useForm } from '../hook/useForm'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
   const dispatch = useDispatch()
@@ -73,6 +74,12 @@ const Register = () => {
           <Button variant='primary' type='submit'>
             Enviar
           </Button>
+          <div className='mt-3 d-flex justify-content-center'>
+            <span>¿Ya tienes una cuenta? </span>
+            <Link className='text-dark' to='/auth/login'>
+              Inicia sesión.
+            </Link>
+          </div>
         </Form>
       </Container>
     </Container>

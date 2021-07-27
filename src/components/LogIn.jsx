@@ -67,7 +67,7 @@ const LogIn = () => {
             </Container>
           </Container>
           <div className='mt-3 d-flex justify-content-center'>
-            <Link className='text-dark' to='/registro'>
+            <Link className='text-dark' to='/auth/register'>
               Registrarse
             </Link>
           </div>
