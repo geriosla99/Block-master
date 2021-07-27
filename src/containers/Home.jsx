@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import MovieCard from '../components/MovieCard/MovieCard'
+import Movies from '../components/Movies/Movies'
 import BannerMovies from '../components/Banner/BannerMovies'
 import Navbar from '../components/Navbar/Navbar'
 import { createGlobalStyle } from 'styled-components'
@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Movies = () => {
+const Home = () => {
   const dispatch = useDispatch()
 
   const fetchMovies = async () => {
@@ -38,9 +38,9 @@ const Movies = () => {
       <GlobalStyle />
       <Navbar />
       <BannerMovies />
-      <MovieCard />
+      <Movies />
     </>
   )
 }
 
-export default Movies
+export default Home
