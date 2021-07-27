@@ -12,17 +12,18 @@ export const HoverStyled = styled.p`
 
 export const LogoBM = styled.img`
     width: 106,81px;
-    height: 64;
+    height: 64px;
 `;
 
 export const ContentLogoBM = styled.div`
     display:flex;
     flex-direction: row;
+
 `;
 
 export const ContentOption = styled.div`
     color:#FFFFFE;
     display: flex;
     flex-direction: row;
-    
+    flex-flow: row nowrap;
 `;

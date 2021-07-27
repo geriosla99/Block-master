@@ -1,10 +1,11 @@
 import React from 'react'
+import {ContainerAll} from './AllStyled'
 
 const All = () => {
     return (
-        <div>
+        <ContainerAll>
             Todas
-        </div>
+        </ContainerAll>
     )
 }
 

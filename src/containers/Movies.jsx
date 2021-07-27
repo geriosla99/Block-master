@@ -7,11 +7,11 @@ import Navbar from "../components/Navbar/Navbar";
 
 const Movies = () => {
     return (
-        <GlobalStyle>
+        <>
             <Navbar/>
             <BannerMovies/>
             <MovieCard/>
-        </GlobalStyle>
+        </>
     )
 }
 

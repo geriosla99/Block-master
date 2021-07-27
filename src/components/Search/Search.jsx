@@ -1,10 +1,11 @@
 import React from 'react'
+import { ContainerSearch } from "./SearchStyled";
 
 const Search = () => {
     return (
-        <div>
+        <ContainerSearch>
             <input type='text'></input>
-        </div>
+        </ContainerSearch>
     )
 }
 

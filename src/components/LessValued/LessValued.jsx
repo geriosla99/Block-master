@@ -1,10 +1,11 @@
 import React from 'react'
+import { ContainerLessValued } from "./LessValuedStyled";
 
 const LessValued = () => {
     return (
-        <div>
+        <ContainerLessValued>
             Menos Valoradas
-        </div>
+        </ContainerLessValued>
     )
 }
 

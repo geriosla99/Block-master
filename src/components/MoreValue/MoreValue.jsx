@@ -1,10 +1,11 @@
 import React from 'react'
+import { ContainerMoreValue } from "./MoreValueStyled";
 
 const MoreValue = () => {
     return (
-        <div>
+        <ContainerMoreValue>
             Mas valorados
-        </div>
+        </ContainerMoreValue>
     )
 }
 
