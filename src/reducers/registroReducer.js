@@ -7,7 +7,7 @@ export const registroReducer = (state = {}, action) => {
                 id: action.payload.id,
                 name: action.payload.displayName
             }
-        case types.logout:
+            case types.logout:
             return{}
         default:
             return state;

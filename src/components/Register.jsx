@@ -3,7 +3,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import { registroEmailPasswordName } from "../action/action";
 import {useDispatch} from 'react-redux';
 import { useForm } from "../hook/useForm";
-
+import {loginGoogle} from '../action/action'
 
 const Register = () => {
 
@@ -20,8 +20,12 @@ const Register = () => {
 
     const handleRegister = (e) =>{
         e.preventDefault();
-        console.log(name, password, password2)
-        dispatch(registroEmailPasswordName(name, email, password))
+        console.log(name, password, email)
+        dispatch(registroEmailPasswordName(email,password,name))
+    }
+
+    const handleLoginGoogle = () =>{
+        dispatch(loginGoogle());
     }
 
     return (
@@ -85,11 +89,21 @@ const Register = () => {
                         />
                     </Form.Group>
                     <Button 
-                    variant="primary" 
-                    type="submit"
+                        variant="primary" 
+                        type="submit"
                     >
                         Enviar
                     </Button>
+                    <Container className="auth__social-networks">
+                            <Container 
+                                className="google-btn"
+                                onClick={handleLoginGoogle}
+                                >
+                                <Container className="google-icon-wrapper">
+                                    <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
+                                </Container>
+                            </Container>
+                    </Container>
                 </Form> 
             </Container>
         </Container>
