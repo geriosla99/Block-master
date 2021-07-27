@@ -79,18 +79,13 @@ const LogIn = () => {
                 </Container>
               </Container>
               <div className='mt-3 d-flex justify-content-center'>
-                <p>¿No estas registrado?</p>
-                <Link className='text-dark' to='/registro'>
-                  Registrate
+                <span>¿No estás registrado?</span>
+                <Link className='text-dark' to='/auth/register'>
+                  Registrarse
                 </Link>
               </div>
             </Form>
           </Container>
-          <div className='mt-3 d-flex justify-content-center'>
-            <Link className='text-dark' to='/auth/register'>
-              Registrarse
-            </Link>
-          </div>
         </Card>
       </Container>
     </>
