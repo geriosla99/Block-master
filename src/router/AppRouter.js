@@ -9,9 +9,9 @@ export const AppRouter = () => {
         <div>
             <Router>
                 <Switch>
-                    <Route exact path='/' component={Movies}/>
-                    <Route exact path='/login' component={LogIn}/>
+                    <Route exact path='/' component={LogIn}/>
                     <Route exact path='/registro' component={Register}/>
+                    <Route exact path='/home' component={Movies}/>
                 </Switch>
             </Router>
         </div>
