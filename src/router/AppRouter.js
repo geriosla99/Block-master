@@ -1,17 +1,57 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import LogIn from "../components/LogIn";
-import Register from "../components/Register";
+import React, { useState, useEffect } from 'react'
+import { firebase } from '../firebase/firebaseConfig'
+import { useDispatch } from 'react-redux'
+import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom'
+import { PublicRoute } from './PublicRoute';
+import { PrivateRoute } from './PrivateRoute';
+import { AuthRouter } from './AuthRouter';
+import { login } from '../action/action';
 import Movies from "../containers/Movies";
 
 export const AppRouter = () => {
+    const dispatch = useDispatch();
+    const [checking, setChecking] = useState(true);
+    const [isLooggedIn, setIsLooggedIn] = useState(false);
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged(async (user) => {
+
+            if (user?.uid) {
+                dispatch(login(user.uid, user.displayName));
+                setIsLooggedIn(true)
+
+            } else {
+                setIsLooggedIn(false)
+            }
+            setChecking(false)
+        })
+
+    }, [dispatch, setChecking])
+
+    if (checking) {
+        return (
+            <h1>Cargando...</h1>
+        )
+    }
+
     return (
         <div>
             <Router>
                 <Switch>
-                    <Route exact path='/' component={LogIn}/>
-                    <Route exact path='/registro' component={Register}/>
-                    <Route exact path='/home' component={Movies}/>
+                    <PublicRoute
+                        path="/auth"
+                        component={AuthRouter}
+                        isAuthenticated={isLooggedIn}
+                    />
+
+                    <PrivateRoute
+                        exact
+                        path="/"
+                        component={Movies}
+                        isAuthenticated={isLooggedIn}
+                    />
+
+                    <Redirect to="/auth/login" />
                 </Switch>
             </Router>
         </div>
