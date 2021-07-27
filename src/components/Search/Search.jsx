@@ -11,7 +11,7 @@ const Search = () => {
             id='inlineFormInputGroup'
             placeholder='Busca tu película favorita'
           />
-          <InputGroup.Text>@</InputGroup.Text>
+          <InputGroup.Text><img src='https://i.imgur.com/Tiq9eHB.png' alt='lupa de búsqueda'/></InputGroup.Text>
         </InputGroup>
       </Form>
     </ContainerSearch>
