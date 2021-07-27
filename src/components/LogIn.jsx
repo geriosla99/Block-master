@@ -1,16 +1,8 @@
 import React from 'react'
-<<<<<<< HEAD
-import { Form, Button, Container } from "react-bootstrap";
-import {useForm} from "../hook/useForm";
-import {useDispatch} from 'react-redux'
-import {login, loginEmailPassword} from '../action/action'
-import {loginGoogle} from '../action/action'
-=======
 import { Form, Button, Container } from 'react-bootstrap'
 import { useForm } from '../hook/useForm'
 import { useDispatch } from 'react-redux'
 import { loginGoogle, loginEmailPassword } from '../action/action'
->>>>>>> malena
 import { Link } from 'react-router-dom'
 
 const LogIn = () => {
@@ -28,16 +20,9 @@ const LogIn = () => {
     dispatch(loginEmailPassword(email, password))
   }
 
-<<<<<<< HEAD
-    const handleLogin = (e) =>{
-        e.preventDefault();
-        dispatch(loginEmailPassword(email,password));
-    }
-=======
   const handleLoginGoogle = () => {
     dispatch(loginGoogle())
   }
->>>>>>> malena
 
   return (
     <div>
