@@ -7,6 +7,7 @@ import { createGlobalStyle } from 'styled-components';
 import { setMovies } from '../action/action';
 import { useDispatch } from 'react-redux';
 
+
 const GlobalStyle = createGlobalStyle`
   body {
     background: #352E6C;
