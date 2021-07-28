@@ -4,6 +4,9 @@ import All from '../All/All'
 import MoreValued from '../MoreValue/MoreValue'
 import LessValued from '../LessValued/LessValued'
 import { Navbar, Container, Nav, Dropdown } from 'react-bootstrap'
+import FormCrud from "../FormCrud/FormCrud";
+import { Link } from 'react-router-dom'
+
 
 const NavbarBM = () => {
   return (
@@ -35,7 +38,7 @@ const NavbarBM = () => {
             <Dropdown.Toggle variant="dark" id="dropdown-basic">
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item to="/action-1">Añadir película</Dropdown.Item>
+              <Dropdown.Item><Link to='/form' components={FormCrud}>Añadir película</Link></Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Nav>
