@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import axios from 'axios'
-import Movies from '../components/Movies/Movies'
-import BannerMovies from '../components/Banner/BannerMovies'
-import Navbar from '../components/Navbar/Navbar'
-import { createGlobalStyle } from 'styled-components'
-import { setMovies } from '../action/action'
-import { useDispatch } from 'react-redux'
+import React, { useEffect } from 'react';
+import axios from 'axios';
+import Movies from '../components/Movies/Movies';
+import BannerMovies from '../components/Banner/BannerMovies';
+import Navbar from '../components/Navbar/Navbar';
+import { createGlobalStyle } from 'styled-components';
+import { setMovies } from '../action/action';
+import { useDispatch } from 'react-redux';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -13,10 +13,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     padding: 0;
   }
-`
+`;
 
 const Home = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const fetchMovies = async () => {
     const response = await axios
@@ -24,14 +24,14 @@ const Home = () => {
         'https://api.themoviedb.org/3/movie/popular?api_key=a5b6e4573766eddddb44bea3d3bfa64e&language=es-Co&page=1'
       )
       .catch((err) => {
-        console.log('Error', err)
-      })
-    dispatch(setMovies(response.data.results))
-  }
+        console.log('Error', err);
+      });
+    dispatch(setMovies(response.data.results));
+  };
 
   useEffect(() => {
-    fetchMovies()
-  }, [])
+    fetchMovies();
+  }, []);
 
   return (
     <>
@@ -40,7 +40,7 @@ const Home = () => {
       <BannerMovies />
       <Movies />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

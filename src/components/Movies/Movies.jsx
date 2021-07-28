@@ -1,10 +1,18 @@
-import React from 'react'
-import { Row, Col, Card, Container } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react';
+import { Row, Col, Card, Container } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import MovieDetail from '../movie-detail/MovieDetail';
 
 const Movies = () => {
-  const movies = useSelector((state) => state.movies)
-  const urlImage = 'https://image.tmdb.org/t/p/w500/'
+  const [modalShow, setModalShow] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState({});
+  const movies = useSelector((state) => state.movies);
+  const urlImage = 'https://image.tmdb.org/t/p/w500/';
+
+  const handleShow = (movie) => {
+    setModalShow(true);
+    setSelectedMovie(movie);
+  };
 
   return (
     <>
@@ -13,7 +21,10 @@ const Movies = () => {
         <Row xs={1} md={5} className='g-4'>
           {movies.map((movie) => (
             <Col key={movie.id}>
-              <Card className='bg-dark text-white'>
+              <Card
+                className='bg-dark text-white'
+                onClick={() => handleShow(movie)}
+              >
                 <Card.Img
                   src={urlImage + movie.poster_path}
                   alt={movie.original_title}
@@ -26,8 +37,13 @@ const Movies = () => {
           ))}
         </Row>
       </Container>
+      <MovieDetail
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        selectedMovie={selectedMovie}
+      />
     </>
-  )
-}
+  );
+};
 
-export default Movies
+export default Movies;
