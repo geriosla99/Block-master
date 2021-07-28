@@ -13,21 +13,21 @@ const BannerMovies = () => {
                     alt="First slide"
                     />
                     <Carousel.Caption className='d-flex flex-row'>
-                        <Button style={{background:'#FED941'}} className='d-flex me-3'>
+                        <Button style={{background:'#FED941'}} className='d-flex flex-row me-3'>
                             <img
                             src="https://i.imgur.com/kSCBD6n.png"
                             alt="First slide"
-                            class="align-middle"
+                            className='me-2'
                             /> 
-                            <p className='text-center' style={{color:'#000000'}}>VER AHORA</p>
+                            <p style={{color:'#000000'}}>VER AHORA</p>
                         </Button>
-                        <Button style={{background:'#0C0E16', color:'#FED941' }} className='d-flex me-3'>
+                        <Button style={{background:'#0C0E16', color:'#FED941' }} className='d-flex flex-row me-3'>
                             <img
                             src="https://i.imgur.com/KW0i7zZ.png"
                             alt="First slide"
-                            class="align-middle"
+                            className='me-2'
                             /> 
-                            <p className='text-center'>VER DESPUÉS</p>
+                            <p>VER DESPUÉS</p>
                         </Button>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -38,19 +38,21 @@ const BannerMovies = () => {
                     alt="Second slide"
                     />
                     <Carousel.Caption className='d-flex flex-row'>
-                        <Button style={{background:'#FED941'}} className='d-flex me-3'>
+                        <Button style={{background:'#FED941'}} className='d-flex flex-row me-3'>
                             <img
                             src="https://i.imgur.com/kSCBD6n.png"
                             alt="First slide"
+                            className='me-2'
                             /> 
-                            <p className='text-center' style={{color:'#000000'}}>VER AHORA</p>
+                            <p style={{color:'#000000'}}>VER AHORA</p>
                         </Button>
-                        <Button style={{background:'#0C0E16', color:'#FED941' }} className='d-flex me-3'>
+                        <Button style={{background:'#0C0E16', color:'#FED941' }} className='d-flex flex-row me-3'>
                             <img
                             src="https://i.imgur.com/KW0i7zZ.png"
                             alt="First slide"
+                            className='me-2'
                             /> 
-                            <p className='text-center'>VER DESPUÉS</p>
+                            <p>VER DESPUÉS</p>
                         </Button>
                     </Carousel.Caption>
                     </Carousel.Item>
@@ -61,19 +63,20 @@ const BannerMovies = () => {
                         alt="Third slide"
                         />
                     <Carousel.Caption className='d-flex flex-row'> 
-                        <Button style={{background:'#FED941'}} className='d-flex me-3'>
+                        <Button style={{background:'#FED941'}} className='d-flex flex-row me-3'>
                                 <img
                                 src="https://i.imgur.com/kSCBD6n.png"
                                 alt="First slide"
+                                className='me-2'
                                 /> 
-                                <p className='text-center' style={{color:'#000000'}}>VER AHORA</p>
+                                <p style={{color:'#000000'}}>VER AHORA</p>
                             </Button>
-                            <Button style={{background:'#0C0E16', color:'#FED941' }} className='d-flex me-3'>
+                            <Button style={{background:'#0C0E16', color:'#FED941' }} className='d-flex flex-row me-3'>
                                 <img
                                 src="https://i.imgur.com/KW0i7zZ.png"
                                 alt="First slide"
                                 /> 
-                                <p className='text-center'>VER DESPUÉS</p>
+                                <p>VER DESPUÉS</p>
                         </Button>
                     </Carousel.Caption>
                 </Carousel.Item>
