@@ -3,7 +3,7 @@ import Search from '../Search/Search'
 import All from '../All/All'
 import MoreValued from '../MoreValue/MoreValue'
 import LessValued from '../LessValued/LessValued'
-import { Navbar, Container, Nav } from 'react-bootstrap'
+import { Navbar, Container, Nav, Dropdown } from 'react-bootstrap'
 
 const NavbarBM = () => {
   return (
@@ -31,6 +31,13 @@ const NavbarBM = () => {
           <Nav.Link to='/'>
             <Search />
           </Nav.Link>
+          <Dropdown>
+            <Dropdown.Toggle variant="dark" id="dropdown-basic">
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item to="/action-1">Añadir película</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </Nav>
       </Container>
     </Navbar>
