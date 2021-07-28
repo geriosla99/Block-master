@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import axios from 'axios';
-import { filter } from 'dom-helpers';
 
 const MovieDetail = (props) => {
   const { title, overview, release_date, genre_ids } = props.selectedMovie;
