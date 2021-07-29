@@ -18,18 +18,18 @@ const GlobalStyle = createGlobalStyle`
 const Home = () => {
   const dispatch = useDispatch();
 
-  const fetchMovies = async () => {
-    const response = await axios
-      .get(
-        'https://api.themoviedb.org/3/movie/popular?api_key=a5b6e4573766eddddb44bea3d3bfa64e&language=es-Co&page=1'
-      )
-      .catch((err) => {
-        console.log('Error', err);
-      });
-    dispatch(setMovies(response.data.results));
-  };
 
   useEffect(() => {
+    const fetchMovies = async () => {
+      const response = await axios
+        .get(
+          'https://api.themoviedb.org/3/movie/popular?api_key=a5b6e4573766eddddb44bea3d3bfa64e&language=es-Co&page=1'
+        )
+        .catch((err) => {
+          console.log('Error', err);
+        });
+      dispatch(setMovies(response.data.results));
+    };
     fetchMovies();
   }, []);
 
