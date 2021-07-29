@@ -64,29 +64,29 @@ export const setMovies = (movies) => {
 }
 
 
-export const register = (id, title, image, vote_average, overview) => {
+export const register = (id, title, vote_average, overview, image) => {
     return {
         type: types.register,
         payload: {
             id,
             title,
-            image,
             vote_average,
-            overview
+            overview,
+            image
         }
     }
 }
 
-export const movieRegister = (id, title, image, vote_average, overview) => {
+export const movieRegister = (id, title, vote_average, overview, image) => {
     return async (dispatch) => {
         const newMovie = {
             id,
             title,
-            image,
             vote_average,
-            overview
+            overview,
+            image
         }
-        await db.collection('/Products').add(newMovie);
-        dispatch(register(id, title, image, vote_average, overview))
+        await db.collection('/movies').add(newMovie);
+        dispatch(register(id, title, vote_average, overview, image))
     }
 }
