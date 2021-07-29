@@ -1,5 +1,5 @@
 import { types } from '../types/types'
-import { firebase, google } from "../firebase/firebaseConfig";
+import { firebase, google, db } from "../firebase/firebaseConfig";
 
 export const login = (id, displayName) => {
     return {
@@ -60,5 +60,33 @@ export const setMovies = (movies) => {
     return {
         type: types.setMovies,
         payload: movies
+    }
+}
+
+
+export const register = (id, title, image, vote_average, overview) => {
+    return {
+        type: types.register,
+        payload: {
+            id,
+            title,
+            image,
+            vote_average,
+            overview
+        }
+    }
+}
+
+export const movieRegister = (id, title, image, vote_average, overview) => {
+    return async (dispatch) => {
+        const newMovie = {
+            id,
+            title,
+            image,
+            vote_average,
+            overview
+        }
+        await db.collection('/Products').add(newMovie);
+        dispatch(register(id, title, image, vote_average, overview))
     }
 }
