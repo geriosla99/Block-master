@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col, Card, Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import MovieDetail from '../movie-detail/MovieDetail';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { movieList } from '../../action/action';
 // import { movieRegister } from '../../action/action';
 
 const Movies = () => {
@@ -10,7 +11,12 @@ const Movies = () => {
   const [selectedMovie, setSelectedMovie] = useState({});
   const movies = useSelector((state) => state.movies);
   const urlImage = 'https://image.tmdb.org/t/p/w500/';
+  // const listMovies = useSelector((state) => state.listMovies);
   // const dispatch = useDispatch();
+  // console.log(listMovies);
+  // useEffect(() => {
+  //   dispatch(movieList());
+  // }, []);
 
   // movies.forEach((movie) => {
   //   dispatch(

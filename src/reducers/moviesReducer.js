@@ -1,6 +1,6 @@
 import { types } from '../types/types';
 
-const createMoviesReducer = (state = [], action) => {
+export const moviesReducer = (state = [], action) => {
   switch (action.type) {
     case types.register:
       return {
@@ -11,10 +11,14 @@ const createMoviesReducer = (state = [], action) => {
         image: action.payloadimage
       };
 
+    case types.list:
+      return {
+        ...state,
+        ...action.payload
+      };
+
     default:
       return state;
   }
 
 }
-
-export default createMoviesReducer;

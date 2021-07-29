@@ -90,3 +90,24 @@ export const movieRegister = (id, title, vote_average, overview, image) => {
         dispatch(register(id, title, vote_average, overview, image))
     }
 }
+
+export const list = (movie) => {
+    return {
+        type: types.list,
+        payload: movie
+    }
+}
+
+export const movieList = () => {
+    return async (dispatch) => {
+        const data = await db.collection('/movie').get();
+        const movies = [];
+
+        data.forEach(element => {
+            movies.push({
+                ...element.data()
+            })
+        })
+        dispatch(list(movies));
+    }
+}
