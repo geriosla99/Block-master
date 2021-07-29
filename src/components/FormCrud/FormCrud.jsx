@@ -82,7 +82,7 @@ const FormCrud = () => {
               <Form.Group className='mb-3' controlId='formBasicImage'>
                 <Form.Label>Imagen</Form.Label>
                 <Form.Control
-                  type='text'
+                  type='file'
                   name='image'
                   value={image}
                   onChange={handleInputChange}
