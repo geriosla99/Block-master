@@ -11,7 +11,7 @@ const Movies = () => {
 
   const handleShow = (movie) => {
     setModalShow(true);
-    setSelectedMovie(movie);
+    setSelectedMovie(movie.id);
   };
 
   return (
@@ -40,7 +40,7 @@ const Movies = () => {
       <MovieDetail
         show={modalShow}
         onHide={() => setModalShow(false)}
-        selectedMovie={selectedMovie}
+        id={selectedMovie}
       />
     </>
   );
