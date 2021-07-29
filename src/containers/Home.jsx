@@ -31,7 +31,7 @@ const Home = () => {
       dispatch(setMovies(response.data.results));
     };
     fetchMovies();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

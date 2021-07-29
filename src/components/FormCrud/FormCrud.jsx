@@ -10,7 +10,7 @@ const FormCrud = () => {
 
     useEffect(() => {
       dispatch(listarPeliculas());
-    }, [])
+    }, [dispatch])
 
   const [formValues, handleInputChange, reset] = useForm({
     id: '',
