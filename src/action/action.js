@@ -86,12 +86,29 @@ export const movieRegister = (id, title, vote_average, overview, image) => {
             overview,
             image
         }
-<<<<<<< HEAD
-        await db.collection('/Peliculas').add(newMovie);
-        dispatch(register(id, title, image, vote_average, overview))
-=======
         await db.collection('/movies').add(newMovie);
         dispatch(register(id, title, vote_average, overview, image))
->>>>>>> 3c9f3a019cadc4280841f5ebdc93380fe99ce571
+    }
+}
+
+export const listar = (peliculas) =>{
+    return{
+        type: types.Listar,
+        payload: peliculas
+    }
+}
+
+export const listarPeliculas = ()=>{
+    return async(dispatch)=>{
+        const data = await db.collection('/movies').get();
+        const pelicula = [];
+
+        data.forEach(est=>{
+            pelicula.push({
+                ...est.data()
+            })
+        })
+        console.log(pelicula);
+        dispatch(listar(pelicula));
     }
 }
