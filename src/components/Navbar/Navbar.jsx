@@ -40,15 +40,8 @@ const NavbarBM = () => {
             ></Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item>
-<<<<<<< HEAD
-                <Link to='/forms'>
-                  Añadir película
-                  </Link>
-                </Dropdown.Item>
-=======
                 <Link to='/form'>Añadir película</Link>
               </Dropdown.Item>
->>>>>>> ec8359fbac4442dd72e4d2f1dd900afac3787f01
             </Dropdown.Menu>
           </Dropdown>
         </Nav>

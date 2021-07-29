@@ -86,7 +86,7 @@ export const movieRegister = (id, title, image, vote_average, overview) => {
             vote_average,
             overview
         }
-        await db.collection('/Products').add(newMovie);
+        await db.collection('/Peliculas').add(newMovie);
         dispatch(register(id, title, image, vote_average, overview))
     }
 }

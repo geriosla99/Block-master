@@ -2,5 +2,6 @@
 export const types = {
     login: 'login',
     logout: 'logout',
-    setMovies: 'set-movies'
+    setMovies: 'set-movies',
+    registerMovies: 'register-movies'
 }
