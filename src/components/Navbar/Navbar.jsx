@@ -1,12 +1,11 @@
-import React from 'react'
-import Search from '../Search/Search'
-import All from '../All/All'
-import MoreValued from '../MoreValue/MoreValue'
-import LessValued from '../LessValued/LessValued'
-import { Navbar, Container, Nav, Dropdown } from 'react-bootstrap'
-import FormCrud from "../FormCrud/FormCrud";
-import { Link } from 'react-router-dom'
-
+import React from 'react';
+import Search from '../Search/Search';
+import All from '../All/All';
+import MoreValued from '../MoreValue/MoreValue';
+import LessValued from '../LessValued/LessValued';
+import { Navbar, Container, Nav, Dropdown } from 'react-bootstrap';
+import FormCrud from '../FormCrud/FormCrud';
+import { Link } from 'react-router-dom';
 
 const NavbarBM = () => {
   return (
@@ -35,16 +34,20 @@ const NavbarBM = () => {
             <Search />
           </Nav.Link>
           <Dropdown>
-            <Dropdown.Toggle variant="dark" id="dropdown-basic">
-            </Dropdown.Toggle>
+            <Dropdown.Toggle
+              variant='dark'
+              id='dropdown-basic'
+            ></Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item><Link to='/form' components={FormCrud}>Añadir película</Link></Dropdown.Item>
+              <Dropdown.Item>
+                <Link to='/form'>Añadir película</Link>
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Nav>
       </Container>
     </Navbar>
-  )
-}
+  );
+};
 
-export default NavbarBM
+export default NavbarBM;
