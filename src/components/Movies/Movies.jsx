@@ -2,12 +2,27 @@ import React, { useState } from 'react';
 import { Row, Col, Card, Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import MovieDetail from '../movie-detail/MovieDetail';
+// import { useDispatch } from 'react-redux';
+// import { movieRegister } from '../../action/action';
 
 const Movies = () => {
   const [modalShow, setModalShow] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState({});
   const movies = useSelector((state) => state.movies);
   const urlImage = 'https://image.tmdb.org/t/p/w500/';
+  // const dispatch = useDispatch();
+
+  // movies.forEach((movie) => {
+  //   dispatch(
+  //     movieRegister(
+  //       movie.id,
+  //       movie.title,
+  //       movie.vote_average,
+  //       movie.overview,
+  //       movie.poster_path
+  //     )
+  //   );
+  // });
 
   const handleShow = (movie) => {
     setModalShow(true);
