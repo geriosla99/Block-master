@@ -11,7 +11,11 @@ export const moviesRegisterReducer = (state = [], action) => {
          overview: action.payload.overview,
          vote_average: action.payload.vote_average
         }
-    
+        case types.Listar:
+            return{
+                ...state,
+                pelicula:[...action.payload]
+            }
       default:
         return state;
     }
