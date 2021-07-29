@@ -1,27 +1,50 @@
-import React from 'react'
-import { Form, Button, Container, Card } from 'react-bootstrap'
-import { registroEmailPasswordName } from '../action/action'
-import { useDispatch } from 'react-redux'
-import { useForm } from '../hook/useForm'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Form, Button, Container, Card } from 'react-bootstrap';
+import { registroEmailPasswordName } from '../action/action';
+import { useDispatch } from 'react-redux';
+import { useForm } from '../hook/useForm';
+import { Link } from 'react-router-dom';
+// import { useFormik } from 'formik';
+// import * as Yup from 'yup';
 
 const Register = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
+  // const formik = useFormik({
+  //   initialValues: {
+  //     name: '',
+  //     email: '',
+  //     password: '',
+  //     repeatpassword: '',
+  //   },
+  //   validationSchema: Yup.object({
+  //     name: Yup.string().required(),
+  //     email: Yup.string().email().required(),
+  //     password: Yup.string()
+  //       .required()
+  //       .oneOf([Yup.ref('repeatpassword')]),
+  //     repeatpassword: Yup.string().required(),
+  //   }),
+  //   onSubmit: (data) => {
+  //     console.log(data);
+  //   },
+  // });
 
   const [formValues, handleInputChange] = useForm({
     name: '',
     email: '',
     password: '',
     password2: '',
-  })
+  });
 
-  const { name, email, password, password2 } = formValues
+  const { name, email, password, password2 } = formValues;
 
   const handleRegister = (e) => {
-    e.preventDefault()
-    console.log(name, password, password2)
-    dispatch(registroEmailPasswordName(email, password, name))
-  }
+    e.preventDefault();
+    // formik.handleSubmit();
+    console.log(name, password, password2);
+    dispatch(registroEmailPasswordName(email, password, name));
+  };
 
   return (
     <Container className='mt-5'>
@@ -86,7 +109,7 @@ const Register = () => {
         </Container>
       </Card>
     </Container>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
