@@ -38,7 +38,11 @@ const NavbarBM = () => {
             <Dropdown.Toggle variant="dark" id="dropdown-basic">
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item><Link to='/form' components={FormCrud}>Añadir película</Link></Dropdown.Item>
+              <Dropdown.Item>
+                <Link to='/forms'>
+                  Añadir película
+                  </Link>
+                </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Nav>

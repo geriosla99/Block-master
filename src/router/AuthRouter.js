@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import LogIn from '../components/LogIn';
 import Register from '../components/Register';
 
+
 export const AuthRouter = () => {
   return (
     <div className="auth__main">
@@ -22,7 +23,6 @@ export const AuthRouter = () => {
           />
 
           <Redirect to="/auth/login" />
-
 
         </Switch>
       </div>

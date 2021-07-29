@@ -7,6 +7,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { AuthRouter } from './AuthRouter';
 import { login } from '../action/action';
 import Home from "../containers/Home";
+import FormCrud from "../components/FormCrud/FormCrud";
 
 export const AppRouter = () => {
     const dispatch = useDispatch();
@@ -49,6 +50,12 @@ export const AppRouter = () => {
                         path="/"
                         component={Home}
                         isAuthenticated={isLooggedIn}
+                    />
+
+                    <PrivateRoute 
+                    exact path='/forms' 
+                    component={FormCrud}
+                    isAuthenticated={isLooggedIn}
                     />
 
                     <Redirect to="/auth/login" />
