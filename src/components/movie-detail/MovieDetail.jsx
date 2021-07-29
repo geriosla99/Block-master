@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 const MovieDetail = (props) => {
-  const { title, overview, release_date, genre_ids } = props.selectedMovie;
-  const [genre, setGenre] = useState([]);
+  const [genres, setGenres] = useState([]);
+  const movies = useSelector((state) => state.movies);
+  const [selectedMovie, setSelectedMovie] = useState({});
+  const [selectedGenre, setSelectedGenre] = useState('');
+  const urlImage = 'https://image.tmdb.org/t/p/w500/';
 
   const fetchGenreMovie = async () => {
     const response = await axios
@@ -14,22 +18,25 @@ const MovieDetail = (props) => {
       .catch((err) => {
         console.log('Error', err);
       });
-    const { data } = response;
-
-    console.log(data);
-
-    // const genres = data.filter(
-    //   (gen) => gen.id === genre_ids[0] || gen.id === genre_ids[1]
-    // );
-
-    // setGenre(genres);
+    setGenres(response.data.genres);
   };
 
   useEffect(() => {
     fetchGenreMovie();
   }, []);
 
-  const year = release_date ? release_date.split('-')[0] : '';
+  useEffect(() => {
+    setSelectedMovie(movies.find((movie) => movie.id === props.id));
+  }, [movies, props.id]);
+
+  useEffect(() => {
+    if (selectedMovie) {
+      setSelectedGenre(
+        genres.find((gen) => gen.id === selectedMovie.genre_ids[0])
+      );
+    }
+  }, [selectedMovie, genres]);
+
   return (
     <Modal
       {...props}
@@ -37,14 +44,21 @@ const MovieDetail = (props) => {
       aria-labelledby='contained-modal-title-vcenter'
       centered
     >
-      <Modal.Body>
-        <h4>{title}</h4>
-        <p>{overview}</p>
-        <div>
-          <span>{year}</span>
-          <span>Género</span>
-        </div>
-      </Modal.Body>
+      {selectedMovie && (
+        <Modal.Body>
+          <h4>{selectedMovie.title}</h4>
+          <img src={urlImage + selectedMovie.poster_path} alt='' />
+          <p>{selectedMovie.overview}</p>
+          <div>
+            <span>
+              {selectedMovie.release_date
+                ? selectedMovie.release_date.split('-')[0]
+                : ''}
+            </span>
+            <span className='ms-3'>{selectedGenre && selectedGenre.name}</span>
+          </div>
+        </Modal.Body>
+      )}
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>
