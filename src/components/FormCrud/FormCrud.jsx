@@ -4,7 +4,7 @@ import { useForm } from '../../hook/useForm';
 import { useDispatch } from 'react-redux';
 import { movieRegister, listarPeliculas } from '../../action/action';
 import { useEffect } from 'react';
-import CrudMovies from "./CRUD/CrudMovies";
+import CrudMovies from "../CRUD/CrudMovies";
 
 const FormCrud = () => {
     const dispatch = useDispatch();
